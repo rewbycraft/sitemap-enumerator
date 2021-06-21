@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  redis:
+    ports:
+      - "6379:6379"
+    image: "redis:alpine"
+  grabbers:
+    build: .
+    environment:
+      REDIS_HOST: "redis"
+    scale: 32
+
