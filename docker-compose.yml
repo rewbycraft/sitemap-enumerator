@@ -8,5 +8,7 @@ services:
     build: .
     environment:
       REDIS_HOST: "redis"
+    depends_on:
+      - redis
     scale: 32
 
